@@ -3,12 +3,15 @@
 //============================================
 
 
-/*var todos = [];
+var todos = [];
 function add() {
     var task = document.getElementById("task").value;
     todos.push(task);
     document.getElementById('todos').innerText = todos;
-}*/
+}
+
+/*This code is usd to enter data in the nevigation bar after entering data press add
+* then the output of two adds will be seperated by a coloum*/
 
 
 //============================================
@@ -16,7 +19,7 @@ function add() {
 //============================================
 
 
-/*var todos = [];
+var todos = [];
 function add() {
     var task = document.getElementById('task').value;
     todos.push(task);
@@ -26,7 +29,7 @@ function add() {
 
 function show() {
     var ul = document.createElement('ul');
-    ul.classList.add("list-group");
+    ul.classList.add("list-group"); /*all functions of the class */
     for(var i=0; i<todos.length; i++){
         var li = document.createElement('li');
         li.innerHTML  = '<li>' + todos[i] + '</li>';
@@ -34,15 +37,14 @@ function show() {
         ul.appendChild(li);
     }
     document.getElementById('todos').appendChild(ul);
-}*/
-
-
+}
+/*IN this code the data which we enter is comming again and again like it is repeation the previous value*/
 //============================================
 //-----------  STEP - 3 ----------------------
 //============================================
 
 
-/*
+
 function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
@@ -84,16 +86,16 @@ function show() {
     document.getElementById('todos').appendChild(ul);
 }
 show();
-*/
 
 
+/*this code provides us the deleate button with the recent data on it but is is not functional */
 
 //============================================
 //-----------  STEP - 4 ----------------------
 //============================================
 
 
-/*function getTodos() {
+function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
     if(todos_str !== null)
@@ -162,11 +164,12 @@ function isDone(e) {
     localStorage.setItem('todo',JSON.stringify(todos));
     show();
 }
-show();*/
+show();
 
 
 
-
+/*Now the deleat functionality is working correctlly and the data is removed when del is clickes
+* */
 
 //============================================
 //-----------  STEP - 5 ----------------------
@@ -185,3 +188,10 @@ HINT: use text-decoration:line-through; property of CSS
 
 */
 
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+    }
+}, false);

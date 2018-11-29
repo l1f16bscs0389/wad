@@ -28,10 +28,17 @@ displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
     /*Write your code here */
+    document.getElementById("question").innerHTML=questions[currentQuestion].question;
+
+    currentQuestion++;
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
+
+    document.getElementById("question").innerHTML=questions[currentQuestion].question;
+
+
 }
 
 function resetQuiz() {
