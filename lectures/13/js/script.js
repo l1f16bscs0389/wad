@@ -26,19 +26,42 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+
+
 function displayNext() {
     /*Write your code here */
-    document.getElementById("question").innerHTML=questions[currentQuestion].question;
-
     currentQuestion++;
-}
+    //displayCurrentQuestion()
+    if(currentQuestion == questions.length)
+    {
+        displayScore();
+
+    }
+    displayCurrentQuestion();}
+
+
+
+
 
 function displayCurrentQuestion() {
     /*Write your code here */
+    var answer = document.getElementById("choice-list");
 
-    document.getElementById("question").innerHTML=questions[currentQuestion].question;
 
 
+    //var q = document.getElementById("Question");
+    var q = document.getElementById("question");
+    q.innerText = questions[currentQuestion].question;
+    answer.innerHTML = "";
+
+    //for(loop = 4;loop<questions[Question].Questions.length;loop++)
+
+        for(loop = 0;loop<questions[currentQuestion].choices.length;loop++)
+        answer.innerHTML += "<li>" + "<input type=radio name = option value = questions[currentQuestion].choices[loop]>" + questions[currentQuestion].choices[loop] + "</li>";
+
+    if(document.querySelector("input[type=radio]:checked")==questions[currentQuestion].correctAnswer)
+        correctAnswers++;
+    //currentQuestion++;
 }
 
 function resetQuiz() {
