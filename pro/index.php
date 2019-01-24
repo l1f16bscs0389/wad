@@ -11,6 +11,19 @@ require "server/functions.php";
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
+
+    <script>
+        function search_product(str){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("ProductSearch").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "search.php?ProductSearch=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
 </head>
 <body>
 

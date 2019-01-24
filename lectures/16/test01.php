@@ -21,6 +21,7 @@
 </ul>
 
 <div>
+
     <p><strong>PHP is an amazing and popular language!</strong></p>
     <p>It is powerful enough to be at the core of the biggest
         blogging system on the web (WordPress)!<br>It is deep enough to run the largest social network
